@@ -1,6 +1,6 @@
-const VERIFY_TOKEN = "yahya_verify_123";
+module.exports = (req, res) => {
+  const VERIFY_TOKEN = "yahya_verify_123";
 
-export default function handler(req, res) {
   if (req.method === "GET") {
     const mode = req.query["hub.mode"];
     const token = req.query["hub.verify_token"];
@@ -19,4 +19,4 @@ export default function handler(req, res) {
   }
 
   return res.status(405).send("Method Not Allowed");
-}
+};
